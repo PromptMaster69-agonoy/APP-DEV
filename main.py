@@ -14,7 +14,6 @@ from kivymd.uix.button import MDRaisedButton
 from kivy.uix.boxlayout import BoxLayout
 from kivymd.uix.textfield import MDTextField
 from kivymd.uix.menu import MDDropdownMenu
-from kivymd.uix.snackbar import Snackbar
 from kivy.metrics import dp
 from kivymd.toast import toast
 import datetime
