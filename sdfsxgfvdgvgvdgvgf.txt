@@ -1,0 +1,23 @@
+mobile_num = ObjectProperty(None)
+    password = ObjectProperty(None)
+
+    def login_inter(self):
+        mobile_n = self.mobile_num.text
+        passw = self.password.text
+        if not mobile_n or not passw:
+            self.manager.show_message("Please enter both fields.")
+        else:
+            mobile_n = int(mobile_n)
+            if mobile_n in self.manager.students:
+                if passw == self.manager.students[mobile_n]:
+                    self.manager.show_message("Welcome to Homepage!")
+                    self.manager.current = "homepage"
+                    self.mobile_num.text = ""
+                    self.password.text = ""
+                else:
+                    self.manager.show_message("Invalid password, please try again.")
+                    self.password.text = ""
+            else:
+                self.manager.show_message("Student not found, please sign up.")
+                self.mobile_num.text = ""
+                self.password.text = ""
